@@ -17,6 +17,20 @@ class Player(Turtle):
         """Move turtle upwards"""
         self.forward(MOVE_DISTANCE)
 
+    def move_down(self):
+        """Move turtle backwards"""
+        self.backward(MOVE_DISTANCE)
+
+    def move_left(self):
+        """Move turtle left words"""
+        if self.xcor() > -240:
+            self.setx(self.xcor() - 20)
+
+    def move_right(self):
+        """Move turtle left words"""
+        if self.xcor() < 250:
+            self.setx(self.xcor() + 20)
+
     def reset_position(self):
         """Reset player to starting position when it is level up"""
         self.goto(STARTING_POSITION)

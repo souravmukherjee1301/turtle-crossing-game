@@ -14,6 +14,9 @@ player = Player()  # Create Turtle that you control
 # Create Turtle movement for player
 screen.listen()
 screen.onkeypress(player.move_up, "Up")
+screen.onkeypress(player.move_down, "Down")
+screen.onkeypress(player.move_left, "Left")
+screen.onkeypress(player.move_right, "Right")
 
 game_is_on = True
 while game_is_on:
