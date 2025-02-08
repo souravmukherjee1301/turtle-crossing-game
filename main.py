@@ -11,6 +11,7 @@ screen.title("Turtle Crossing Game")  # Added game title
 
 player = Player()  # Create Turtle that you control
 car_manager = CarManager()  # The moving cars
+scoreboard = Scoreboard()
 
 # Create Turtle movement for player
 screen.listen()
@@ -31,9 +32,10 @@ while game_is_on:
     if player.reached_finished_lines():
         player.reset_position()
         car_manager.increase_speed()  # The car moves faster
-
+        scoreboard.increase_level()  # The level increases
     for car in car_manager.all_cars:
         if car.distance(player) < 20:
+            scoreboard.game_over()  # Game over appears
             game_is_on = False
 
 screen.exitonclick()
